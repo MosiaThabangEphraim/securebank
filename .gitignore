@@ -1,0 +1,18 @@
+# .NET
+SecureBank.API/bin/
+SecureBank.API/obj/
+SecureBank.API/appsettings.Development.json
+*.user
+*.suo
+.vs/
+
+# Node
+securebank-web/node_modules/
+securebank-web/dist/
+securebank-web/.env
+securebank-web/.env.local
+securebank-web/.env.*.local
+
+# General
+.DS_Store
+Thumbs.db

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #070B14;
+    color: #E5E7EB;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  #root {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+@layer components {
+  /* Input styles */
+  .input-dark {
+    @apply w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500
+      focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30
+      transition-all duration-200;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-5 py-2.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700
+      text-white font-semibold rounded-lg transition-all duration-200
+      shadow-glow-blue disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-dark-700 hover:bg-dark-600 active:bg-dark-800
+      text-gray-200 font-medium rounded-lg border border-dark-600
+      transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 text-gray-400 hover:text-white hover:bg-dark-800
+      rounded-lg transition-all duration-200;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-dark-850 border border-dark-700 rounded-2xl shadow-card;
+  }
+
+  .card-elevated {
+    @apply bg-dark-800 border border-dark-700/60 rounded-2xl shadow-card-hover;
+  }
+
+  /* Status badges */
+  .status-posted   { @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/20; }
+  .status-pending  { @apply bg-blue-500/10 text-blue-400 border border-blue-500/20; }
+  .status-quarantined { @apply bg-amber-500/10 text-amber-400 border border-amber-500/20; }
+  .status-blocked  { @apply bg-red-500/10 text-red-400 border border-red-500/20; }
+  .status-disputed { @apply bg-purple-500/10 text-purple-400 border border-purple-500/20; }
+
+  /* Risk badges */
+  .risk-low      { @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/20; }
+  .risk-medium   { @apply bg-yellow-500/10 text-yellow-400 border border-yellow-500/20; }
+  .risk-high     { @apply bg-orange-500/10 text-orange-400 border border-orange-500/20; }
+  .risk-critical { @apply bg-red-500/10 text-red-400 border border-red-500/20; }
+
+  /* Nav item */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
+      text-gray-400 hover:text-white hover:bg-dark-800
+      transition-all duration-200 cursor-pointer;
+  }
+
+  .nav-item-active {
+    @apply text-white bg-blue-600/15 border border-blue-500/20;
+  }
+}
+
+@keyframes fraudFlicker {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; background: rgba(220, 38, 38, 0.22); }
+  25%  { opacity: 0.4; background: rgba(220, 38, 38, 0.08); }
+  40%  { opacity: 1; background: rgba(220, 38, 38, 0.18); }
+  60%  { opacity: 0.3; background: rgba(220, 38, 38, 0.06); }
+  80%  { opacity: 0.8; background: rgba(220, 38, 38, 0.12); }
+  100% { opacity: 0; }
+}
+
+.animate-fraud-flicker {
+  animation: fraudFlicker 0.9s ease-in-out forwards;
+}
+
+@layer utilities {
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #374151; }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(13, 19, 33, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Noise texture overlay for cards */
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .text-amount {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: 'tnum';
+  }
+}

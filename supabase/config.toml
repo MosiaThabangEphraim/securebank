@@ -1,0 +1,6 @@
+[project]
+# Get your project ref from: https://supabase.com/dashboard/project/_/settings/general
+project_id = "your-project-ref"
+
+[functions.send-alert-email]
+verify_jwt = false

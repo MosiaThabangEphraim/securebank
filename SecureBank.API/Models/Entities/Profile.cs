@@ -21,7 +21,6 @@ public class Profile
     public ICollection<Card> Cards { get; set; } = new List<Card>();
     public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
     public ICollection<Beneficiary> Beneficiaries { get; set; } = new List<Beneficiary>();
-    public ICollection<DeviceRegistry> Devices { get; set; } = new List<DeviceRegistry>();
     public ICollection<LoginHistory> LoginHistories { get; set; } = new List<LoginHistory>();
     public ICollection<Alert> Alerts { get; set; } = new List<Alert>();
     public ICollection<FraudCase> FraudCases { get; set; } = new List<FraudCase>();

@@ -25,5 +25,4 @@ public class FraudCase
     public Account? Account { get; set; }
     public Profile? User { get; set; }
     public Profile? Analyst { get; set; }
-    public ICollection<CaseTimeline> Timeline { get; set; } = new List<CaseTimeline>();
 }

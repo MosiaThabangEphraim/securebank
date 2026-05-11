@@ -78,12 +78,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<FraudScoringService>();
 builder.Services.AddScoped<TransactionService>();
-builder.Services.AddScoped<AccountService>();
-builder.Services.AddScoped<NotificationService>();
-builder.Services.AddScoped<DeviceService>();
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()

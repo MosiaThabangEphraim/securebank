@@ -30,17 +30,20 @@ export const LoginHistory: React.FC = () => {
 
   useEffect(() => {
     if (!user) return
-    supabase
-      .from('login_history')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('attempted_at', { ascending: false })
-      .limit(100)
-      .then(({ data, error }) => {
+    ;(async () => {
+      try {
+        const { data, error } = await supabase
+          .from('login_history')
+          .select('*')
+          .eq('user_id', user.id)
+          .order('attempted_at', { ascending: false })
+          .limit(100)
         if (error) console.error('Failed to load login history:', error)
         setRecords((data ?? []).map(r => mapRecord(r as Record<string, unknown>)))
-      })
-      .finally(() => setLoading(false))
+      } finally {
+        setLoading(false)
+      }
+    })()
   }, [user])
 
   return (

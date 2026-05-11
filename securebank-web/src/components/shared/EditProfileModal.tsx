@@ -43,12 +43,13 @@ export const EditProfileModal: React.FC<Props> = ({ isOpen, onClose, userId }) =
   useEffect(() => {
     if (!isOpen) return
     setFetching(true)
-    supabase
-      .from('profiles')
-      .select('full_name, phone_number, address, city, country_code')
-      .eq('id', userId)
-      .single()
-      .then(({ data }) => {
+    ;(async () => {
+      try {
+        const { data } = await supabase
+          .from('profiles')
+          .select('full_name, phone_number, address, city, country_code')
+          .eq('id', userId)
+          .single()
         if (data) {
           const r = data as Record<string, unknown>
           setFullName(    (r.full_name    as string) ?? '')
@@ -57,8 +58,10 @@ export const EditProfileModal: React.FC<Props> = ({ isOpen, onClose, userId }) =
           setCity(        (r.city         as string) ?? '')
           setCountryCode( (r.country_code as string) ?? '')
         }
-      })
-      .finally(() => setFetching(false))
+      } finally {
+        setFetching(false)
+      }
+    })()
   }, [isOpen, userId])
 
   const handleSave = async () => {

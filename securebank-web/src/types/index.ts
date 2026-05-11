@@ -80,6 +80,10 @@ export interface Transaction {
   createdAt: string;
   updatedAt: string;
   fraudScore?: FraudScore;
+  merchantName?: string;
+  merchantCategory?: string;
+  locationCity?: string;
+  locationCountry?: string;
 }
 
 export interface FraudScore {

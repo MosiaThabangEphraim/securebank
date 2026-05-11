@@ -4,9 +4,10 @@ EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
-COPY ["SecureBank.API.csproj", "."]
-RUN dotnet restore
+COPY ["SecureBank.API/SecureBank.API.csproj", "SecureBank.API/"]
+RUN dotnet restore "SecureBank.API/SecureBank.API.csproj"
 COPY . .
+WORKDIR "/src/SecureBank.API"
 RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final

@@ -11,14 +11,6 @@ public class Transaction
     public TransactionDirection Direction { get; set; }
     public string CurrencyCode { get; set; } = "ZAR";
     public decimal? RunningBalance { get; set; }
-    public string? MerchantName { get; set; }
-    public string? MerchantCategory { get; set; }
-    public string? MerchantMcc { get; set; }
-    public string? MerchantLogoUrl { get; set; }
-    public string? LocationCity { get; set; }
-    public string? LocationCountry { get; set; }
-    public decimal? Latitude { get; set; }
-    public decimal? Longitude { get; set; }
     public bool IsInternational { get; set; }
     public TransactionStatus Status { get; set; } = TransactionStatus.pending;
     public string? ReferenceNumber { get; set; }
@@ -33,6 +25,5 @@ public class Transaction
     public Profile? User { get; set; }
     public Card? Card { get; set; }
     public Beneficiary? Beneficiary { get; set; }
-    public FraudScore? FraudScore { get; set; }
     public ICollection<Alert> Alerts { get; set; } = new List<Alert>();
 }

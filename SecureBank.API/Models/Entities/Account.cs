@@ -19,6 +19,5 @@ public class Account
     public Profile? User { get; set; }
     public ICollection<Card> Cards { get; set; } = new List<Card>();
     public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
-    public ICollection<FraudScore> FraudScores { get; set; } = new List<FraudScore>();
     public ICollection<FraudCase> FraudCases { get; set; } = new List<FraudCase>();
 }

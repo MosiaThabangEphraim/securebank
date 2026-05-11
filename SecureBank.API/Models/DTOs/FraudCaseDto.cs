@@ -20,17 +20,4 @@ public class FraudCaseDto
     public DateTime SlaDeadline { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
-    public List<CaseTimelineDto>? Timeline { get; set; }
-}
-
-public class CaseTimelineDto
-{
-    public Guid Id { get; set; }
-    public Guid CaseId { get; set; }
-    public Guid? ActorId { get; set; }
-    public string ActorType { get; set; } = "system";
-    public string EventType { get; set; } = "";
-    public string EventDescription { get; set; } = "";
-    public string? Metadata { get; set; }
-    public DateTime CreatedAt { get; set; }
 }

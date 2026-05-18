@@ -35,7 +35,7 @@ The API is the backbone of all business logic and data operations:
 
 ### Supabase
 Supabase handles everything that requires a managed backend service:
-- **Auth** — user signup, email confirmation, login, logout, and password reset
+- **Auth** - user signup, email confirmation, login, logout, and password reset
 - **Database** - PostgreSQL database hosting all tables (profiles, accounts, cards, transactions, fraud cases, alerts, beneficiaries, fraud preferences)
 - **Realtime** - live alert delivery to the frontend the moment a new alert is inserted into the database
 - **Storage** - profile picture uploads

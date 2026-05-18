@@ -6,7 +6,7 @@ A full-stack digital banking web application with customizable real-time fraud d
 
 ## Architecture
 
-### Frontend — React + TypeScript
+### Frontend - React + TypeScript
 The frontend handles everything the user sees and interacts with:
 - Multi-step registration with duplicate email, phone, and ID validation
 - Login, logout, and password reset flows
@@ -20,7 +20,7 @@ The frontend handles everything the user sees and interacts with:
 - Real-time alert panel with sound notifications and unread badge
 - Edit profile, change password, and manage beneficiaries
 
-### Backend — .NET 10 ASP.NET Core API
+### Backend - .NET 10 ASP.NET Core API
 The API is the backbone of all business logic and data operations:
 - JWT authentication - validates every request against Supabase's RS256 public keys (JWKS)
 - Accounts - create, close, reopen, and delete accounts with balance enforcement

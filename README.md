@@ -146,3 +146,6 @@ Frontend runs at `http://localhost:5173`
 - Duplicate email, phone, and ID checked before registration
 - All API endpoints require authentication except `/api/auth/check`
 - Database credentials and secrets are never committed to the repository
+
+## Development Notes
+AI assisted tool Claude were used occasionally during development for code review, debugging guidance, and productivity improvements. All architecture, implementation decisions, and final code integration were completed by the author.

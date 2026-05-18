@@ -1,6 +1,6 @@
 # SecureBank
 
-A full-stack digital banking web application with customizable real-time fraud detection. Users configure their own rules — velocity limits, spend caps, unusual hours, duplicate detection — and every transaction is scored instantly. Built with React, .NET 10, and Supabase.
+A full-stack digital banking web application with customizable real-time fraud detection. Users configure their own rules - velocity limits, spend caps, unusual hours, duplicate detection — and every transaction is scored instantly. Built with React, .NET 10, and Supabase.
 
 ---
 
@@ -11,34 +11,34 @@ The frontend handles everything the user sees and interacts with:
 - Multi-step registration with duplicate email, phone, and ID validation
 - Login, logout, and password reset flows
 - Dashboard with live account balances and recent transactions
-- Account management — create, close, and reopen accounts
-- Virtual card management — issue cards, block, freeze, and toggle spending controls (contactless, online, international)
+- Account management - create, close, and reopen accounts
+- Virtual card management - issue cards, block, freeze, and toggle spending controls (contactless, online, international)
 - Transfer money to own accounts or saved beneficiaries
-- Fraud rules settings — each user configures their own detection thresholds
-- Review zone — inspect and action flagged transactions
-- Dispute portal — report fraud and track case status and SLA deadlines
+- Fraud rules settings - each user configures their own detection thresholds
+- Review zone - inspect and action flagged transactions
+- Dispute portal - report fraud and track case status and SLA deadlines
 - Real-time alert panel with sound notifications and unread badge
 - Edit profile, change password, and manage beneficiaries
 
 ### Backend — .NET 10 ASP.NET Core API
 The API is the backbone of all business logic and data operations:
-- JWT authentication — validates every request against Supabase's RS256 public keys (JWKS)
-- Accounts — create, close, reopen, and delete accounts with balance enforcement
-- Cards — issue cards, update status (active/blocked/frozen), and toggle spending settings
-- Transactions — execute transfers, enforce balance checks, update sender and receiver balances atomically
-- Fraud scoring — scores every transaction in real time against the user's configured rules
-- Fraud cases — open dispute cases, assign case numbers, set SLA deadlines
-- Alerts — create, retrieve, mark as read, and mark all as read
-- Beneficiaries — add and remove saved payees
-- Fraud preferences — store and retrieve each user's custom fraud detection rules
-- Registration availability check — validates email (against `auth.users`), phone, and ID uniqueness before signup
+- JWT authentication - validates every request against Supabase's RS256 public keys (JWKS)
+- Accounts - create, close, reopen, and delete accounts with balance enforcement
+- Cards - issue cards, update status (active/blocked/frozen), and toggle spending settings
+- Transactions - execute transfers, enforce balance checks, update sender and receiver balances atomically
+- Fraud scoring - scores every transaction in real time against the user's configured rules
+- Fraud cases - open dispute cases, assign case numbers, set SLA deadlines
+- Alerts - create, retrieve, mark as read, and mark all as read
+- Beneficiaries - add and remove saved payees
+- Fraud preferences - store and retrieve each user's custom fraud detection rules
+- Registration availability check - validates email (against `auth.users`), phone, and ID uniqueness before signup
 
 ### Supabase
 Supabase handles everything that requires a managed backend service:
 - **Auth** — user signup, email confirmation, login, logout, and password reset
-- **Database** — PostgreSQL database hosting all tables (profiles, accounts, cards, transactions, fraud cases, alerts, beneficiaries, fraud preferences)
-- **Realtime** — live alert delivery to the frontend the moment a new alert is inserted into the database
-- **Storage** — profile picture uploads
+- **Database** - PostgreSQL database hosting all tables (profiles, accounts, cards, transactions, fraud cases, alerts, beneficiaries, fraud preferences)
+- **Realtime** - live alert delivery to the frontend the moment a new alert is inserted into the database
+- **Storage** - profile picture uploads
 
 ---
 

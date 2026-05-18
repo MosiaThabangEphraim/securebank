@@ -80,6 +80,12 @@ SecureBank/
 └── supabase/              # Supabase config and edge functions
 ```
 
+## Deployment
+### Frontend
+The frontend is deployed on Vercel for fast global delivery and seamless continuous deployment.
+### Backend
+The backend API is hosted on Render.
+
 ---
 
 ## Getting Started

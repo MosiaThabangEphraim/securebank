@@ -147,5 +147,6 @@ Frontend runs at `http://localhost:5173`
 - All API endpoints require authentication except `/api/auth/check`
 - Database credentials and secrets are never committed to the repository
 
-## Development Notes
-AI assisted tool Claude were used occasionally during development for code review, debugging guidance, and productivity improvements. All architecture, implementation decisions, and final code integration were completed by the author.
+## Acknowledgements
+- Special thanks to the open-source community for the libraries and tools that made this project possible
+- AI assisted tool: Claude was used occasionally during development for code review, debugging guidance, and productivity improvements.

@@ -4,6 +4,12 @@ A full-stack digital banking web application with customizable real-time fraud d
 
 ---
 
+## Live Demo
+https://securebank-d4vt81zo5-mosiathabangephraims-projects.vercel.app
+
+### Note
+The server may enter sleep mode after inactivity, so the first request can take a 30 - 60 seconds due to a cold start. Subsequent requests will be much faster.
+
 ## Architecture
 
 ### Frontend - React + TypeScript

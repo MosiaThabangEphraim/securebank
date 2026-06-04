@@ -3,6 +3,11 @@
 A full-stack digital banking web application with customizable real-time fraud detection. Users configure their own rules - velocity limits, spend caps, unusual hours, duplicate detection - and every transaction is scored instantly. Built with React, .NET 10, and Supabase.
 
 ---
+## 🚀 Live Demo
+
+[View Website](https://securebank-d4vt81zo5-mosiathabangephraims-projects.vercel.app)
+
+# Note: First API request might take 30 - 60 seconds or so, due to Render's Free tier cold start. But subsequeent requests are faster.
 
 ## Architecture
 

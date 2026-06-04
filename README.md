@@ -7,7 +7,7 @@ A full-stack digital banking web application with customizable real-time fraud d
 
 [View Website](https://securebank-d4vt81zo5-mosiathabangephraims-projects.vercel.app)
 
-# Note: First API request might take 30 - 60 seconds or so, due to Render's Free tier cold start. But subsequeent requests are faster.
+### Note: First API request might take 30 - 60 seconds or so, due to Render's Free tier cold start. But subsequeent requests are faster.
 
 ## Architecture
 
